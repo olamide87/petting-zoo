@@ -13,19 +13,43 @@ from blackswan import BlackSwan
 from frog import Frog
 from watersnake import WaterSnake
 
+from attractions import PettingZoo, SnakePit, Wetlands
+
 
 
 def main():
-    myCatFish = Catfish("Wall Singer", "Chicken of the Sea", "Eats Garbage")
+    
+    
+    varmint_village = PettingZoo("Varmint Village")
+    slither_inn = SnakePit('Slither Inn')
+    bubbling_brook = Wetlands('Bubbling Brook')
 
-   # print(myCatFish)
+     # swimmers
+    myCatfish = Catfish("Wall Singer", "Big Catfish", "Catfish Nibbles")
+    bubbling_brook.add_animal(myCatfish)
 
+    # walkers
     miss_fuzz = Camel("Miss Fuzz", "domestic Camel", "morning", "Camel Feed")
     print(miss_fuzz.feed())
+    varmint_village.add_animal(miss_fuzz)
 
     giddy_up = Bronco("Giddy Up", "Friendly Mustang", "afternoon", "Horse Chow")
     print(giddy_up.feed())
+    varmint_village.add_animal(giddy_up)
+
+     # slither-ers??
+    slimy_stan = WaterSnake(
+        "Slimy Stan", "Slimy Water Snake", "mice")
+    print(slimy_stan.feed())
+    slither_inn.add_animal(slimy_stan)
 
 
+
+    print("******")
+    varmint_village.get_animals()
+    print("******")
+    slither_inn.get_animals()
+    print("******")
+    bubbling_brook.get_animals()
 
 main()
